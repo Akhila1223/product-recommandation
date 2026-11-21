@@ -1,0 +1,50 @@
+
+.header {
+  height: 80px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 30px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.header-title {
+  margin: 0;
+  font-size: 24px;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--surface-muted);
+  color: var(--text-primary);
+  font: inherit;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 12px;
+  }
+
+  .header-title {
+    font-size: 16px;
+  }
+
+  .theme-toggle {
+    padding: 8px;
+  }
+}

@@ -1,0 +1,40 @@
+.suggestion-card {
+  width: 100%;
+  text-align: left;
+  border: 1px solid #e6e0ef;
+  padding: 16px;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.suggestion-card h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.suggestion-card p {
+  margin: 0;
+  color: #999;
+  font-size: 12px;
+}
+
+.suggestion-card {
+  background: var(--surface-muted);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+}
+
+.suggestion-card h3 {
+  color: var(--text-primary);
+}
+
+.suggestion-card p {
+  color: var(--text-secondary);
+}
+
+.suggestion-card:hover {
+  border-color: var(--accent);
+  background: var(--surface);
+}

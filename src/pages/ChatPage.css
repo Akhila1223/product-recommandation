@@ -1,0 +1,163 @@
+
+.chat-page {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  padding: 20px 30px;
+  color: var(--text-primary);
+}
+
+.chat-scroll-area {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.chat-welcome {
+  text-align: center;
+  margin: auto 0 30px;
+  color: var(--text-primary);
+}
+
+.chat-welcome h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.bot-icon {
+  font-size: 40px;
+}
+
+.suggestions-section {
+  margin-top: auto;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.suggestions-title {
+  margin: 0 0 12px;
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.suggestions-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.conversation-feedback {
+  flex-shrink: 0;
+  margin-bottom: 16px;
+}
+
+.user-input-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  flex-shrink: 0;
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgb(44 28 68 / 10%);
+}
+
+.user-input-container input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text-primary);
+  font: inherit;
+}
+
+.user-input-container input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.85;
+}
+
+.user-input-container input:focus {
+  border-color: var(--accent);
+  outline: 2px solid rgb(112 65 184 / 20%);
+}
+
+.user-input-container button {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 16px;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.ask-button {
+  background-color: #7041b8;
+}
+
+.ask-button:hover {
+  background-color: #5c329c;
+}
+
+.save-button {
+  background-color: #505a68;
+}
+
+.save-button:hover {
+  background-color: #3c444f;
+}
+
+.user-input-container button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.save-status {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin: 8px 0 0;
+}
+
+@media (max-width: 700px) {
+  .chat-page {
+    padding: 15px;
+  }
+
+  .suggestions-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .user-input-container {
+    flex-wrap: wrap;
+  }
+
+  .user-input-container input {
+    flex-basis: 100%;
+  }
+
+  .user-input-container button {
+    flex: 1;
+  }
+}
