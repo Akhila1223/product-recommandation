@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import SuggestionCard from "../components/SuggestionCard";
 import ChatMessage from "../components/ChatMessage";
 import FeedbackModal from "../components/FeedbackModal";
@@ -22,28 +22,23 @@ export default function ChatPage({ onConversationChange }) {
 
   const chatScrollRef = useRef(null);
 
-  const currentConversation = {
-    id: conversationId,
-    createdAt,
-    title:
-      messages.find((item) => item.sender === "user")?.text ||
-      "Product recommendations",
-    messages,
-    overallRating,
-    overallFeedback,
-  };
+  const currentConversation = useMemo(
+    () => ({
+      id: conversationId,
+      createdAt,
+      title:
+        messages.find((item) => item.sender === "user")?.text ||
+        "Product recommendations",
+      messages,
+      overallRating,
+      overallFeedback,
+    }),
+    [conversationId, createdAt, messages, overallRating, overallFeedback],
+  );
 
   useEffect(() => {
     onConversationChange?.(currentConversation);
-  }, [
-    messages,
-    conversationId,
-    // currentConversation,
-    createdAt,
-    overallRating,
-    overallFeedback,
-    onConversationChange,
-  ]);
+  }, [currentConversation, onConversationChange]);
 
   useEffect(() => {
     if (chatScrollRef.current && messages.length > 0) {
